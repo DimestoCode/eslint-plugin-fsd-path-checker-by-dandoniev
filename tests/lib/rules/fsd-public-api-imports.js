@@ -31,6 +31,20 @@ ruleTester.run("fsd-public-api-imports", rule, {
       code: "import AddArticle from \"@/widgets/AddArticle\"",
       options: [{ alias: "@" }]
     },
+    {
+      filename: "C:\\Users\\dando\\Desktop\\Pet_Project\\src\\entities\\Article\\ui\\Article.test.tsx",
+      code: "import { addCommentFormActions } from \"@/entities/Article/testing\";",
+      options: [
+        { testFilesPatterns: [ "**/*.test.{ts,tsx}", "**/StoreDecorator.tsx" ], alias: "@"}
+      ]
+    },
+    {
+      filename: "C:\\Users\\dando\\Desktop\\Pet_Project\\src\\entities\\Article\\ui\\StoreDecorator.tsx",
+      code: "import { addCommentFormActions } from \"@/entities/Article/testing\";",
+      options: [
+        { testFilesPatterns: [ "**/*.test.ts", "**/*.test.tsx", "**/StoreDecorator.tsx" ], alias: "@"}
+      ]
+    }
   ],
 
   invalid: [
@@ -39,5 +53,13 @@ ruleTester.run("fsd-public-api-imports", rule, {
       options: [{ alias: "@" }],
       errors: [{ messageId: "absolute_imports"}]
     },
+    {
+      filename: "C:\\Users\\dando\\Desktop\\Pet_Project\\src\\entities\\Article\\ui\\St.tsx",
+      code: "import { addCommentFormActions } from \"@/entities/Article/testing\";",
+      errors: [{ messageId: "testing_absolute_imports" }],
+      options: [
+        { testFilesPatterns: [ "**/*.test.{ts,tsx}", "**/StoreDecorator.tsx" ], alias: "@"}
+      ]
+    }
   ],
 });
