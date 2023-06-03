@@ -60,6 +60,22 @@ ruleTester.run("fsd-public-api-imports", rule, {
       options: [
         { testFilesPatterns: [ "**/*.test.{ts,tsx}", "**/StoreDecorator.tsx" ], alias: "@"}
       ]
-    }
+    },
+    {
+      filename: "C:\\Users\\dando\\Desktop\\Pet_Project\\src\\entities\\Article\\ui\\StoreDecorator.tsx",
+      code: "import { addCommentFormActions } from \"@/entities/Article\";",
+      errors: [{ messageId: "testing_absolute_imports" }],
+      options: [
+        { testFilesPatterns: [ "**/*.test.{ts,tsx}", "**/StoreDecorator.tsx" ], alias: "@"}
+      ]
+    },
+    {
+      filename: "C:\\Users\\dando\\Desktop\\Pet_Project\\src\\entities\\Article\\ui\\store.test.tsx",
+      code: "import { addCommentFormActions } from \"@/entities/Article\";",
+      errors: [{ messageId: "testing_absolute_imports" }],
+      options: [
+        { testFilesPatterns: [ "**/*.test.{ts,tsx}", "**/StoreDecorator.tsx" ], alias: "@"}
+      ]
+    },
   ],
 });
