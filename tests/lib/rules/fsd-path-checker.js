@@ -34,7 +34,8 @@ ruleTester.run("fsd-path-checker", rule, {
       filename: "C:\\Users\\dando\\Desktop\\Pet_Project\\src\\entities\\Article\\ui\\Article.tsx",
       code: "import { addCommentFormActions } from \"@/entities/Article/model/slices/addCommentForm\";",
       errors: [{ message: "Imports should be relative in scope of one slice" }],
-      options: [{ alias: "@"}]
+      options: [{ alias: "@" }],
+      output: "import { addCommentFormActions } from \"../model/slices/addCommentForm\";"
     },
   ],
 });
