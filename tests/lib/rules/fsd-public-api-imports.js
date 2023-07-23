@@ -20,7 +20,8 @@ const ruleTester = new RuleTester({
   parserOptions: { ecmaVersion: 6, sourceType: "module" },
 });
 ruleTester.run("fsd-public-api-imports", rule, {
-  valid: [{
+  valid: [
+    {
     code: "import Item from \"@/entities/Article\"",
     options: [{ alias: "@" }]
   }, {
