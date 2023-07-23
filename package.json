@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-fsd-path-checker-by-dandoniev",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "Plugin is intended to validate import paths for project using FSD methodology",
   "keywords": [
     "eslint",
